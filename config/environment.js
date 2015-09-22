@@ -15,6 +15,15 @@ module.exports = function(environment) {
     sassOptions: {
       includePaths: ['bower_components/material-design-lite/src']
     },
+    contentSecurityPolicy: {
+      'default-src': "'unsafe-inline'",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+      'connect-src': "'self' ",
+      'img-src': "'self' data: https://www.gstatic.com",
+      'font-src': "'self' fonts.gstatic.com",
+      'media-src': "'self'"
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
