@@ -27,7 +27,7 @@
 </div>
 <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
   {{#if isEditing}}
-    {{textarea value=post.body rows=30 cols=140}}
+    {{textarea value=post.body rows=20 cols=140}}
   {{else}}
     {{post.body}}
   {{/if}}
@@ -38,6 +38,7 @@
     {{mdl-button text='Save' action='save'}}
   {{else}}
     {{mdl-button text='Edit' action='edit'}}
+    {{mdl-button text='Delete' action='delete'}}
   {{/if}}
 {{/mdl-card-actions}}
 

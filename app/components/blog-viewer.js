@@ -10,6 +10,10 @@ export default Ember.Component.extend({
     },
     save: function() {
       this.set('isEditing', false);
+      this.sendAction('savePost', this.get('post'));
+    },
+    delete: function() {
+      this.sendAction('deletePost', this.get('post'));
     }
   }
 });
