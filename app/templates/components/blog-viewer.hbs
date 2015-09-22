@@ -24,6 +24,15 @@
 <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
   {{post.body}}
 </div>
+
+{{#mdl-card-actions}}
+  {{#if isEditing}}
+    {{mdl-button text='Save' action='save'}}
+  {{else}}
+    {{mdl-button text='Edit' action='edit'}}
+  {{/if}}
+{{/mdl-card-actions}}
+
 <!--
 <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
   <form>
