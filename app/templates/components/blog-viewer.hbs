@@ -1,5 +1,9 @@
 <div class="mdl-card__media mdl-color-text--grey-50">
-  <h3>{{post.title}}</h3>
+  {{#if isEditing}}
+    <h3>{{mdl-textfield value=post.title}}</h3>
+  {{else}}
+    <h3>{{post.title}}</h3>
+  {{/if}}
 </div>
 <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
   <div class="minilogo"></div>
@@ -22,7 +26,11 @@
   </div>
 </div>
 <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-  {{post.body}}
+  {{#if isEditing}}
+    {{textarea value=post.body rows=30 cols=140}}
+  {{else}}
+    {{post.body}}
+  {{/if}}
 </div>
 
 {{#mdl-card-actions}}
