@@ -1,0 +1,16 @@
+<div class="mdl-card__media mdl-color-text--grey-50">
+</div>
+<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+  <div>
+    <strong>{{mdl-textfield label='Title' value=title}}</strong>
+    <strong>{{mdl-textfield label="Author" value=author}}</strong>
+  </div>
+  <div class="section-spacer"></div>
+</div>
+<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+  {{textarea value=body rows=20 cols=140}}
+</div>
+
+{{#mdl-card-actions}}
+  {{mdl-button text='Save' action='save'}}
+{{/mdl-card-actions}}

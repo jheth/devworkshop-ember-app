@@ -1,27 +1,12 @@
-<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+<div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
   <main class="mdl-layout__content">
+    <div class="demo-back">
+      {{#link-to 'index' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" title="go back" role="button"}}
+        <i class="material-icons" role="presentation">arrow_back</i>
+      {{/link-to}}
+    </div>
     <div class="demo-blog__posts mdl-grid">
-
-      <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent add-button">
-        {{#link-to 'new'}}
-          <i class="material-icons mdl-color-text--white" role="presentation">add</i>
-          <span class="visuallyhidden">add</span>
-        {{/link-to}}
-      </button>
-
-      {{#each model as |post|}}
-        {{blog-card post=post}}
-      {{/each}}
-
-      <nav class="demo-nav mdl-cell mdl-cell--12-col">
-        <div class="section-spacer"></div>
-        <a href="#" class="demo-nav__button" title="show more">
-          More
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">arrow_forward</i>
-          </button>
-        </a>
-      </nav>
+      {{new-post createPost="createPost"}}
     </div>
     <footer class="mdl-mini-footer">
       <div class="mdl-mini-footer--left-section">
