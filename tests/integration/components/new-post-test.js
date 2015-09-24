@@ -6,7 +6,7 @@ moduleForComponent('new-post', 'Integration | Component | new post', {
 });
 
 test('it renders', function(assert) {
-  assert.expect(6);
+  assert.expect(10);
 
   this.render(hbs`{{new-post}}`);
 
@@ -21,10 +21,20 @@ test('it renders', function(assert) {
 
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{new-post title=t author=a body=b}}`);
+  this.render(hbs`{{new-post title=t author=a body=b createPost="createPost"}}`);
 
   assert.equal(this.$('.title input').val().trim(), 'Placeholder');
   assert.equal(this.$('.author input').val().trim(), 'Jane Doe');
   assert.equal(this.$('.body textarea').val().trim(), 'This is a test.');
+
+  this.on('createPost', val => {
+    assert.equal(val.title, 'Placeholder');
+    assert.equal(val.author, 'Jane Doe');
+    assert.equal(val.body, 'This is a test.');
+  });
+
+  var button = this.$('button');
+  assert.equal(button.length, 1);
+  button.click();
 
 });
