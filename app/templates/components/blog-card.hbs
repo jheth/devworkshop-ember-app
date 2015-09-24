@@ -2,14 +2,14 @@
   <div class="mdl-card__media mdl-color-text--grey-50">
     <h3>{{#link-to 'entry' post}}{{post.title}}{{/link-to}}</h3>
   </div>
-  <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+  <div class="mdl-card__supporting-text mdl-color-text--grey-600 body">
     {{post.body}}
   </div>
   <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
     <div class="minilogo"></div>
     <div>
-      <strong>{{post.author}}</strong>
-      <span>{{post.createdAt}}</span>
+      <strong class="author">{{post.author}}</strong>
+      <span class="body">{{post.createdAt}}</span>
     </div>
   </div>
 </div>

@@ -8,8 +8,8 @@
 <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
   <div class="minilogo"></div>
   <div>
-    <strong>{{post.author}}</strong>
-    <span>{{post.createdAt}}</span>
+    <strong class="author">{{post.author}}</strong>
+    <span class="created-at">{{post.createdAt}}</span>
   </div>
   <div class="section-spacer"></div>
   <div class="meta__favorites">
@@ -25,7 +25,7 @@
     <span class="visuallyhidden">share</span>
   </div>
 </div>
-<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+<div class="mdl-color-text--grey-700 mdl-card__supporting-text body">
   {{#if isEditing}}
     {{textarea value=post.body rows=20 cols=140}}
   {{else}}

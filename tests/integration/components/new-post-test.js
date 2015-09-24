@@ -6,21 +6,25 @@ moduleForComponent('new-post', 'Integration | Component | new post', {
 });
 
 test('it renders', function(assert) {
-  assert.expect(2);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  assert.expect(6);
 
   this.render(hbs`{{new-post}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('.title input').val().trim(), '');
+  assert.equal(this.$('.author input').val().trim(), '');
+  assert.equal(this.$('.body textarea').val().trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#new-post}}
-      template block text
-    {{/new-post}}
-  `);
+  // Set any properties with this.set('myProperty', 'value');
+  this.set('t', 'Placeholder');
+  this.set('a', 'Jane Doe');
+  this.set('b', 'This is a test.');
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  // Handle any actions with this.on('myAction', function(val) { ... });
+
+  this.render(hbs`{{new-post title=t author=a body=b}}`);
+
+  assert.equal(this.$('.title input').val().trim(), 'Placeholder');
+  assert.equal(this.$('.author input').val().trim(), 'Jane Doe');
+  assert.equal(this.$('.body textarea').val().trim(), 'This is a test.');
+
 });

@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
   actions: {
     savePost: function(post) {
-      post.save()
+      post.save();
     },
     deletePost: function(post) {
       post.destroyRecord();
