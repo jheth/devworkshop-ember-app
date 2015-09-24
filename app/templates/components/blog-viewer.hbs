@@ -13,11 +13,11 @@
   </div>
   <div class="section-spacer"></div>
   <div class="meta__favorites">
-    425 <i class="material-icons" role="presentation">favorite</i>
+    {{post.favoriteCount}} <i class="material-icons {{isFavorite}}" role="presentation" {{action 'markAsFavorite'}}>favorite</i>
     <span class="visuallyhidden">favorites</span>
   </div>
-  <div>
-    <i class="material-icons" role="presentation">bookmark</i>
+  <div class="meta__bookmark">
+    <i class="material-icons {{isBookmarked}}" role="presentation" {{action 'bookmark'}}>bookmark</i>
     <span class="visuallyhidden">bookmark</span>
   </div>
   <div>

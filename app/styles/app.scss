@@ -94,7 +94,16 @@ body .demo-blog {
   margin: 0 8px;
   font-size: 13px;
   font-weight: 500;
+  .active {
+    color: red;
+  }
 }
+.demo-blog .meta > .meta__bookmark{
+  .active {
+    color: blue;
+  }
+}
+
 .demo-blog .meta > .meta__favorites .material-icons {
   font-size: 2em;
   cursor: pointer;
