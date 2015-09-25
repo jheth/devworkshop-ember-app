@@ -7,5 +7,7 @@ export default DS.Model.extend({
   publishedAt: DS.attr('date'),
   author: DS.attr('string'),
   favoriteCount: DS.attr('number', {defaultValue: 0}),
-  isBookmarked: DS.attr('boolean', {defaultValue: false})
+  isBookmarked: DS.attr('boolean', {defaultValue: false}),
+  nextPostId: DS.attr('number'),
+  prevPostId: DS.attr('number')
 });

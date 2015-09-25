@@ -9,19 +9,23 @@
       {{blog-viewer post=model savePost="savePost" deletePost="deletePost"}}
 
       <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-        <a href="#" class="demo-nav__button">
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-            <i class="material-icons">arrow_back</i>
-          </button>
-          Newer
-        </a>
+        {{#if model.prevPostId}}
+          {{#link-to 'entry' model.prevPostId class="demo-nav__button"}}
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            Newer
+          {{/link-to}}
+        {{/if}}
         <div class="section-spacer"></div>
-        <a href="#" class="demo-nav__button">
-          Older
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-            <i class="material-icons">arrow_forward</i>
-          </button>
-        </a>
+        {{#if model.nextPostId}}
+          {{#link-to 'entry' model.nextPostId class="demo-nav__button"}}
+            Older
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+              <i class="material-icons">arrow_forward</i>
+            </button>
+          {{/link-to}}
+        {{/if}}
       </nav>
     </div>
     <footer class="mdl-mini-footer">
