@@ -9,9 +9,7 @@
         {{/link-to}}
       </button>
 
-      {{#each model as |post|}}
-        {{blog-card post=post}}
-      {{/each}}
+      {{sorted-list list=model sortBy='author' direction='asc'}}
 
       <nav class="demo-nav mdl-cell mdl-cell--12-col">
         <div class="section-spacer"></div>
